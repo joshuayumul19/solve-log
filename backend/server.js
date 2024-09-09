@@ -6,11 +6,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use((req, res, next) => {
-	next();
-});
 
-app.get("/", issueRoutes);
+// Root route
+app.get("/", (req, res) => {
+	res.json({ message: "Welcome to the API" });
+});
 
 // Routes
 app.use("/issues", issueRoutes);

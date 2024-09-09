@@ -39,9 +39,6 @@ const issueSchema = new Schema(
 	{ timestamps: true }
 );
 
-issueSchema.index({ issue: "text" });
-issueSchema.index({ date: -1 });
-
 const Issue = mongoose.model("Issue", issueSchema);
 
 export default Issue;

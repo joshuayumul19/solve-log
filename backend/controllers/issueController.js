@@ -7,6 +7,7 @@ const getAllIssues = async (req, res) => {
 		const issuesAll = await Issue.find({}).sort({ createdAt: -1 });
 		res.json({ success: true, data: issuesAll });
 	} catch (error) {
+		console.error("Error on retreiving all issues");
 		handleRequestError(res, error);
 	}
 };
@@ -31,6 +32,7 @@ const getSingleIssue = async (req, res) => {
 
 		res.status(200).json({ success: true, data: issueSingle });
 	} catch (error) {
+		console.error(`Error on retreiving single issue - ID : ${id}`);
 		handleRequestError(res, error);
 	}
 };
@@ -40,6 +42,7 @@ const addNewIssue = async (req, res) => {
 		const newIssue = await Issue.create(req.body);
 		res.status(201).json({ success: true, data: newIssue });
 	} catch (error) {
+		console.error("Error on creating a new issue");
 		handleRequestError(res, error, 400);
 	}
 };
@@ -64,6 +67,7 @@ const deleteIssue = async (req, res) => {
 
 		return res.status(200).json({ success: true, data: issueToDelete });
 	} catch (error) {
+		console.error(`Error on deleting an issue - ID : ${id}`);
 		handleRequestError(res, error);
 	}
 };
@@ -91,6 +95,7 @@ const updateIssue = async (req, res) => {
 
 		return res.status(200).json({ success: true, data: updatedIssue });
 	} catch (error) {
+		console.error(`Error on updating an issue - ID : ${id}`);
 		handleRequestError(res, error, 400);
 	}
 };

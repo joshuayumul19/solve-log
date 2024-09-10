@@ -5,7 +5,7 @@ dotenv.config(); // Load environment variables from .env file
 
 //Database connection
 const MONGO_URI = process.env.MONGO_URI;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 export const connectToDB = async (app) => {
 	try {

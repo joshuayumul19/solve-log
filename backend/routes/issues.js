@@ -1,5 +1,11 @@
 import express from "express";
-import { getAllIssues, getSingleIssue, addNewIssue, deleteIssue, updateIssue } from "../controllers/issueController.js";
+import {
+	getAllIssues,
+	getSingleIssue,
+	addNewIssue,
+	deleteIssue,
+	updateIssue,
+} from "../controllers/issueController.js";
 
 const issueRoutes = express.Router();
 

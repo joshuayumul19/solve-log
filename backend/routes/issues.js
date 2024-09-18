@@ -14,6 +14,6 @@ issueRoutes.get("/", getAllIssues);
 issueRoutes.get("/:id", getSingleIssue);
 issueRoutes.post("/", addNewIssue);
 issueRoutes.delete("/:id", deleteIssue);
-issueRoutes.patch("/:id", updateIssue);
+issueRoutes.put("/:id", updateIssue);
 
 export default issueRoutes;

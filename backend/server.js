@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import issueRoutes from "./routes/issues.js";
+import userRouter from "./routes/user.js";
 import { connectToDB } from "./config/config.js";
 
 const app = express();
@@ -13,6 +14,7 @@ const __dirname = path.resolve();
 
 // API routes
 app.use("/api/issues", issueRoutes);
+app.use("/api/user", userRouter);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "/frontend/dist")));

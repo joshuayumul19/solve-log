@@ -15,7 +15,7 @@ const getAllIssues = async (req, res) => {
 const getSingleIssue = async (req, res) => {
 	const { id } = req.params;
 
-	if (!isValidObjectId(id)) {
+	if (!isValidObjectId(id)) { 
 		return res
 			.status(400)
 			.json({ success: false, error: "Invalid issue ID format" });
